@@ -1,0 +1,7 @@
+[package]
+name = "cpu_6502-rs"
+version = "0.1.0"
+edition = "2024"
+description = "Rust port of the C++ 6502 emulator - learning how a CPU works by emulating one"
+
+[dependencies]
