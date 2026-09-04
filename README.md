@@ -34,3 +34,24 @@ PS: 0
 mem[0x0010] = 0x42 (should be 0x42)
 X = 2 (the subroutine incremented it twice)
 ```
+
+# They establish this structure:
+
+```txt
+                    crate
+                      │
+             ┌────────┴────────┐
+             │                 │
+           cpu                mem
+             │                 │
+       ┌─────┴─────┐           │
+       │           │           │
+      Cpu     StatusFlags      Mem
+             │
+             │
+             └──── public re-export ────┐
+                                         │
+                                  crate::Cpu
+                                  crate::StatusFlags
+                                  crate::Mem
+```
