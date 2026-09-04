@@ -22,7 +22,7 @@
   </a>
 </p>
 
-- Learning how a CPU works by emulating one 
+- (C++코드) Learning how a CPU works by emulating one
   - https://github.com/davepoo/6502Emulator
 
 # A small demo program for the m6502 CPU, in the spirit of the original
