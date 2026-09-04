@@ -1,5 +1,29 @@
 # cpu_6502-rs
-Learning how a CPU works by emulating one - https://github.com/davepoo/6502Emulator
+
+<p align="center">
+  <!-- Crates version -->
+  <a href="https://crates.io/crates/cpu_6502-rs">
+    <img src="https://img.shields.io/crates/v/cpu_6502-rs.svg?style=flat-square"
+    alt="Crates.io version" />
+  </a>
+  <!-- Downloads -->
+  <a href="https://crates.io/crates/cpu_6502-rs">
+    <img src="https://img.shields.io/crates/d/cpu_6502-rs.svg?style=flat-square"
+      alt="Download" />
+  </a>
+  <!-- docs.rs docs -->
+  <a href="https://docs.rs/cpu_6502-rs">
+    <img src="https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square"
+      alt="docs.rs docs" />
+  </a>
+  <!-- Rust version -->
+  <a href="https://www.rust-lang.org/" rel="nofollow noopener noreferrer">
+    <img src="https://img.shields.io/badge/Rust-1.98+-orange.svg" alt="Rust">
+  </a>
+</p>
+
+- Learning how a CPU works by emulating one 
+  - https://github.com/davepoo/6502Emulator
 
 # A small demo program for the m6502 CPU, in the spirit of the original
 - [youtube video](https://youtu.be/qJgsuQoy9bc).
@@ -55,3 +79,6 @@ X = 2 (the subroutine incremented it twice)
                                   crate::StatusFlags
                                   crate::Mem
 ```
+
+# A project worth referencing other things
+- [A safe, pure Rust 32-bit PowerPC user-mode CPU interpreter.](https://github.com/benletchford/ppc-rs)
