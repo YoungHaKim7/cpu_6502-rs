@@ -17,10 +17,7 @@ fn verify_unmodified_flags_from_store_register(cpu: &Cpu, cpu_copy: &Cpu) {
     assert_eq!(cpu.flags.n, cpu_copy.flags.n);
 }
 
-fn test_store_register_zero_page(
-    opcode_to_test: u8,
-    register: impl Fn(&mut Cpu) -> &mut u8,
-) {
+fn test_store_register_zero_page(opcode_to_test: u8, register: impl Fn(&mut Cpu) -> &mut u8) {
     // given:
     let (mut cpu, mut mem) = setup();
     *register(&mut cpu) = 0x2F;
@@ -39,10 +36,7 @@ fn test_store_register_zero_page(
     verify_unmodified_flags_from_store_register(&cpu, &cpu_copy);
 }
 
-fn test_store_register_absolute(
-    opcode_to_test: u8,
-    register: impl Fn(&mut Cpu) -> &mut u8,
-) {
+fn test_store_register_absolute(opcode_to_test: u8, register: impl Fn(&mut Cpu) -> &mut u8) {
     // given:
     let (mut cpu, mut mem) = setup();
     *register(&mut cpu) = 0x2F;
@@ -62,10 +56,7 @@ fn test_store_register_absolute(
     verify_unmodified_flags_from_store_register(&cpu, &cpu_copy);
 }
 
-fn test_store_register_zero_page_x(
-    opcode_to_test: u8,
-    register: impl Fn(&mut Cpu) -> &mut u8,
-) {
+fn test_store_register_zero_page_x(opcode_to_test: u8, register: impl Fn(&mut Cpu) -> &mut u8) {
     // given:
     let (mut cpu, mut mem) = setup();
     *register(&mut cpu) = 0x42;
@@ -85,10 +76,7 @@ fn test_store_register_zero_page_x(
     verify_unmodified_flags_from_store_register(&cpu, &cpu_copy);
 }
 
-fn test_store_register_zero_page_y(
-    opcode_to_test: u8,
-    register: impl Fn(&mut Cpu) -> &mut u8,
-) {
+fn test_store_register_zero_page_y(opcode_to_test: u8, register: impl Fn(&mut Cpu) -> &mut u8) {
     // given:
     let (mut cpu, mut mem) = setup();
     *register(&mut cpu) = 0x42;

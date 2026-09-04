@@ -7,14 +7,14 @@ use crate::mem::Mem;
 /// [`StatusFlags::from_byte`] do the bit packing.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct StatusFlags {
-    pub c: bool,     //0: Carry Flag
-    pub z: bool,     //1: Zero Flag
-    pub i: bool,     //2: Interrupt disable
-    pub d: bool,     //3: Decimal mode
-    pub b: bool,     //4: Break
+    pub c: bool,      //0: Carry Flag
+    pub z: bool,      //1: Zero Flag
+    pub i: bool,      //2: Interrupt disable
+    pub d: bool,      //3: Decimal mode
+    pub b: bool,      //4: Break
     pub unused: bool, //5: Unused
-    pub v: bool,     //6: Overflow
-    pub n: bool,     //7: Negative
+    pub v: bool,      //6: Overflow
+    pub n: bool,      //7: Negative
 }
 
 impl StatusFlags {
@@ -509,14 +509,14 @@ impl Cpu {
     }
 
     /** Push Processor status onto the stack
-    *    Setting bits 4 & 5 on the stack */
+     *    Setting bits 4 & 5 on the stack */
     fn push_ps_to_stack(&mut self, cycles: &mut i32, memory: &mut Mem) {
         let ps_stack = self.ps() | Self::BREAK_FLAG_BIT | Self::UNUSED_FLAG_BIT;
         self.push_byte_onto_stack(cycles, ps_stack, memory);
     }
 
     /** Pop Processor status from the stack
-    *    Clearing bits 4 & 5 (Break & Unused) */
+     *    Clearing bits 4 & 5 (Break & Unused) */
     fn pop_ps_from_stack(&mut self, cycles: &mut i32, memory: &Mem) {
         let ps = self.pop_byte_from_stack(cycles, memory);
         self.flags = StatusFlags::from_byte(ps);
@@ -1312,8 +1312,8 @@ impl Cpu {
     }
 
     /** Addressing mode - Absolute with X offset
-    *    - Always takes a cycle for the X page boundary)
-    *    - See "STA Absolute,X" */
+     *    - Always takes a cycle for the X page boundary)
+     *    - See "STA Absolute,X" */
     fn addr_absolute_x_5(&mut self, cycles: &mut i32, memory: &Mem) -> u16 {
         let abs_address = self.fetch_word(cycles, memory);
         let abs_address_x = abs_address.wrapping_add(self.x as u16);
@@ -1334,8 +1334,8 @@ impl Cpu {
     }
 
     /** Addressing mode - Absolute with Y offset
-    *    - Always takes a cycle for the Y page boundary)
-    *    - See "STA Absolute,Y" */
+     *    - Always takes a cycle for the Y page boundary)
+     *    - See "STA Absolute,Y" */
     fn addr_absolute_y_5(&mut self, cycles: &mut i32, memory: &Mem) -> u16 {
         let abs_address = self.fetch_word(cycles, memory);
         let abs_address_y = abs_address.wrapping_add(self.y as u16);
@@ -1364,8 +1364,8 @@ impl Cpu {
     }
 
     /** Addressing mode - Indirect Y | Indirect Indexed
-    *    - Always takes a cycle for the Y page boundary)
-    *    - See "STA (Indirect,Y) */
+     *    - Always takes a cycle for the Y page boundary)
+     *    - See "STA (Indirect,Y) */
     fn addr_indirect_y_6(&mut self, cycles: &mut i32, memory: &Mem) -> u16 {
         let zp_address = self.fetch_byte(cycles, memory);
         let effective_addr = self.read_word(cycles, zp_address as u16, memory);

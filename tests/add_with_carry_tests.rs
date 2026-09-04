@@ -444,7 +444,8 @@ fn adc_abs_will_set_the_overflow_flag_when_signed_negative_addtion_fails() {
 }
 
 #[test]
-fn adc_abs_will_set_the_overflow_flag_when_signed_negative_addtion_passed_due_to_inital_carry_flag() {
+fn adc_abs_will_set_the_overflow_flag_when_signed_negative_addtion_passed_due_to_inital_carry_flag()
+{
     // C: 00000001
     // A: 10000000 -128
     // O: 11111111 -1

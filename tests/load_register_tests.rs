@@ -106,10 +106,7 @@ fn test_load_register_zero_page_y(
     verify_unmodified_flags_from_load_register(&cpu, &cpu_copy);
 }
 
-fn test_load_register_absolute(
-    opcode_to_test: u8,
-    register_to_test: impl Fn(&mut Cpu) -> &mut u8,
-) {
+fn test_load_register_absolute(opcode_to_test: u8, register_to_test: impl Fn(&mut Cpu) -> &mut u8) {
     // given:
     let (mut cpu, mut mem) = setup();
     cpu.flags.z = true;
