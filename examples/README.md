@@ -1,23 +1,4 @@
-```rs
-6502 hardware concept        Rust implementation
-────────────────────────────────────────────────────────
-Processor status register    StatusFlags
-A register                   Cpu::a
-X register                   Cpu::x
-Y register                   Cpu::y
-Program counter              Cpu::pc
-Stack pointer                Cpu::sp
-Memory                       Mem
-Fetch instruction            fetch_byte()
-Fetch 16-bit operand         fetch_word()
-Memory read                  read_byte()
-Memory write                 write_byte()
-Stack address                sp_to_address()
-Addressing modes             addr_*
-Instruction execution        execute()
-```
-
-# 6502CPU
+# 6502_CPU
 
 Great — now the structure is much clearer. I inspected the supplied `cpu.rs` content and the `mem.rs` portion. The CPU implementation contains the important pieces that `lib.rs` should introduce: `StatusFlags`, `Cpu`, the 6502 register set, opcode groups, fetch/read/write operations, stack operations, addressing modes, instruction execution, and cycle accounting.  
 
@@ -34,7 +15,7 @@ Putting another complete opcode table in `lib.rs` would duplicate the source and
 
 There is also a particularly useful correspondence in your implementation:
 
-```text
+```rs
 6502 hardware concept        Rust implementation
 ────────────────────────────────────────────────────────
 Processor status register    StatusFlags
