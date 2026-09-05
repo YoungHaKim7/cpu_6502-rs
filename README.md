@@ -82,5 +82,6 @@ X = 2 (the subroutine incremented it twice)
 
 # A project worth referencing other things
 - [A safe, pure Rust 32-bit PowerPC user-mode CPU interpreter.](https://github.com/benletchford/ppc-rs)
+- [(250612) Emulating 6502 CPU in Rust and C | Tsoding Daily](https://youtu.be/VtQeJQVO1mk?si=6q2yJhwK1eIk8NRU)
 - [(영상모아보기) Bootable MOS 6502 processor simulator Data Engineering](https://youtube.com/playlist?list=PLLfIBXQeu3aYzySV0j7XU5lmL3MC5kYqe&si=TiCr3TwkLErZ9-Lb)
   - https://github.com/maksimKorzh/M6502OS
